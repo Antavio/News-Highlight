@@ -6,8 +6,8 @@ def index():
     '''
     Function that returns the index page & its data
     '''
-    message = "Welcome to NewsHighlight"
-    return render_template('index.html', messages = message)
+    title = "Get Breaking news headlines"
+    return render_template('index.html', title = title)
 
 @app.route('/news_source/<int:news_id>')
 def news_source(news_id):
