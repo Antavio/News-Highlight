@@ -11,7 +11,7 @@ class NewsTest(unittest.TestCase):
         '''
         Runs before every Test
         '''
-        self.new_source = News_sources ('bbc-sport','BBC Sport','The home of BBC Sport online')
+        self.new_source = News_sources ('bbc-sport','BBC Sport','The home of BBC Sport online',"http://www.bbc.co.uk/sport")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,News_sources))
