@@ -3,12 +3,18 @@ import urllib.request,json
 from .models import news_sources
 
 News_sources= news_sources.News_sources
+#Getting the Articles class
+Articles = news_sources.Articles
+
 
 #Get API Key
 api_key = app.config['NEWS_API_KEY']
 
 #Getting the news base url
 base_url = app.config["NEWS_API_BASE_URL"]
+
+#Getting articles base url
+articles_base_url = app.config["NEWS_SOURCES_BASE_URL"]
 
 def get_news_source(category):
     '''
@@ -47,3 +53,37 @@ def process_sources(news_list):
         news_results.append(news_objects)
 
     return news_results
+
+def articles(news_id):
+    get_articles_url = articles_base_url.format(news_id,api_key)
+
+    with urllib.request.urlopen(get_articles_url) as url:
+        articles_data = url.read()
+        articles_response = json.loads(articles_data)
+
+        articles_source_results = None
+        if articles_response['articles']:        
+            articles_source_results = process_articles(articles_response['articles'])
+    return articles_source_results
+
+def process_articles(articles_list):
+    '''
+    A Function to process & transfrom articles_list into a list of objects
+    '''
+    articles_results = []
+
+    for article in articles_list:
+        author = article.get('author')
+        title = article.get('title')
+        description = article.get('description')
+        url = article.get('url')
+        urlToImage = article.get('urlToImage')
+        publishedAt = article.get('publishedAt')
+
+        if urlToImage:
+            articles_object = Articles(author,title,description,url,urlToImage,publishedAt)
+            articles_results.append(articles_object)
+
+    return articles_results
+
+

@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_news_source
+from .request import get_news_source,articles
 
 @app.route('/')
 def index():
@@ -30,9 +30,12 @@ def index():
 
     return render_template('index.html', title = title, tech = technology_news, general = general_news, sports = sports_news, business = business_news, entertainment = entertainment_news, health = health_news)
 
-@app.route('/news_source/<int:news_id>')
-def news_source(news_id):
+@app.route('/articles/<news_id>')
+def news_articles(news_id):
     '''
-    News source page function that will return news sources plus data
+    A function that will return news articles plus data
     '''
-    return render_template('news_source.html',id = news_id)
+    news_articles_source = articles(news_id)
+    return render_template('articles.html', id_name = news_id, articles = news_articles_source)
+
+
