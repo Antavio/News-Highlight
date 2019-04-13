@@ -1,40 +1,30 @@
+{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-    <title>{{title}}</title>
-    {% else %}
-    <title>Welcome to Breaking News site</title>
-    {% endif %}
-</head>
-<body>
-    <h2>Technology News</h2>
+
+{% block content%}
+
+<h2>Technology News</h2>
     <ul>
         {{macro.displayNews(tech)}}
     </ul>
-    <h2>General News</h2>
+<h2>General News</h2>
     <ul>
         {{macro.displayNews(general)}}
     </ul>
-    <h2>Sports News</h2>
+<h2>Sports News</h2>
     <ul>
         {{macro.displayNews(sports)}}
     </ul>
-    <h2>Business News</h2>
+<h2>Business News</h2>
     <ul>
         {{macro.displayNews(business)}}
     </ul>
-    <h2>Entertainment News</h2>
+<h2>Entertainment News</h2>
     <ul>
         {{macro.displayNews(entertainment)}}
     </ul>
-    <h2>Health News</h2>
+<h2>Health News</h2>
     <ul>
         {{macro.displayNews(health)}}
     </ul>
-</body>
-</html>
+{% endblock%}
