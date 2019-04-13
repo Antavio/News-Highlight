@@ -1,8 +1,17 @@
 {% extends 'bootstrap/base.html'%}
 
+{% block styles%}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Underdog" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Underdog" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
 {% block navbar %}
     {% include 'navbar.html' %}
 {% endblock %}
+
+
 
 <!-- <!DOCTYPE html>
 <html lang="en">

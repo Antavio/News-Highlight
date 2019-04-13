@@ -2,29 +2,30 @@
 {% import 'macros.html' as macro %}
 
 {% block content%}
-
-<h2>Technology News</h2>
-    <ul>
+<div class="container-fluid">
+<h2 class="text-center">Technology News</h2>
+    <div class="row">
         {{macro.displayNews(tech)}}
-    </ul>
-<h2>General News</h2>
-    <ul>
+    </div>
+<h2 class="text-center">General News</h2>
+    <div class="row">   
         {{macro.displayNews(general)}}
-    </ul>
-<h2>Sports News</h2>
-    <ul>
+    </div>
+<h2 class="text-center">Sports News</h2>
+    <div class="row">
         {{macro.displayNews(sports)}}
-    </ul>
-<h2>Business News</h2>
-    <ul>
+    </div>
+<h2 class="text-center">Business News</h2>
+    <div class="row">    
         {{macro.displayNews(business)}}
-    </ul>
-<h2>Entertainment News</h2>
-    <ul>
+    </div>
+<h2 class="text-center">Entertainment News</h2>
+    <div class="row">
         {{macro.displayNews(entertainment)}}
-    </ul>
-<h2>Health News</h2>
-    <ul>
+    </div>
+<h2 class="text-center">Health News</h2>
+    <div class="row">
         {{macro.displayNews(health)}}
-    </ul>
+    </div>
+</div>
 {% endblock%}
