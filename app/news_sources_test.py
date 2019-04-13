@@ -16,5 +16,15 @@ class NewsTest(unittest.TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,News_sources))
 
+    def test_init(self):
+        '''
+        Test to check initialization of variables
+        '''
+        self.assertEqual(self.new_source.id,"bbc-sport")
+        self.assertEqual(self.new_source.name,"BBC Sport")
+        self.assertEqual(self.new_source.description,"The home of BBC Sport online")
+        self.assertEqual(self.new_source.url,"http://www.bbc.co.uk/sport")        
+    
+
 if __name__ == '__main__':
     unittest.main()
