@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content%}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-10">
-            <h2>Article Source: {{id_name}}</h2>
+<div class="container-fluid">    
+        <div class="jumbotron">
+            <h2 class="news_name text-center"><strong>{{id_name}}</strong></h2>        
         </div>
-    </div> 
+    
     <div class="row">
         {% for article in articles %}
         <div class="col-md-4" style="height:50%">
