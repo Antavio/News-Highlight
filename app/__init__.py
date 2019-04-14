@@ -1,19 +1,26 @@
 from flask import Flask
-from .config import DevConfig
 from flask_bootstrap import Bootstrap
+from config import config_options
 
 
+bootstrap = Bootstrap()
 
-#Initialization
-app = Flask(__name__,instance_relative_config=True)
+def create_app(config_name):
+    #Initialization
+    app = Flask(__name__)
 
-#Setting up new configuration
-app.config.from_object(DevConfig)
-app.config.from_pyfile('config.py')
+    # Creating app configurations
+    app.config.from_object(config_options[config_name])
 
-#Initialize the Bootstrap extension
-bootstrap = Bootstrap(app)
+    #Initialize the flask extension
+    bootstrap.init_app(app)
 
+    # Registering the blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
-from app import views
-from app import errors
+    #Setting up config
+    from .request import configure_request
+    configure_request(app) 
+
+    return app

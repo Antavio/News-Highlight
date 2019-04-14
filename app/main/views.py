@@ -1,8 +1,9 @@
-from flask import render_template
-from app import app
-from .request import get_news_source,articles
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..request import get_news_source,articles
+from ..models import News_sources 
 
-@app.route('/')
+@main.route('/')
 def index():
     '''
     Function that returns the index page & its data
@@ -30,7 +31,7 @@ def index():
 
     return render_template('index.html', title = title, tech = technology_news, general = general_news, sports = sports_news, business = business_news, entertainment = entertainment_news, health = health_news)
 
-@app.route('/articles/<news_id>')
+@main.route('/articles/<news_id>')
 def news_articles(news_id):
     '''
     A function that will return news articles plus data
