@@ -1,4 +1,4 @@
-#!/home/antavio/Documents/friday-assignments/News-Highlight/virtual/bin/python
+#!/home/antavio/Documents/friday-assignments/HighLight_News/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,5 +1,7 @@
 import unittest
-from app.models import News_sources
+from models import news_sources
+
+News_sources= news_sources.News_sources
 
 class NewsTest(unittest.TestCase):
     '''
@@ -23,3 +25,6 @@ class NewsTest(unittest.TestCase):
         self.assertEqual(self.new_source.description,"The home of BBC Sport online")
         self.assertEqual(self.new_source.url,"http://www.bbc.co.uk/sport")        
     
+
+if __name__ == '__main__':
+    unittest.main()
