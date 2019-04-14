@@ -1,7 +1,5 @@
 import unittest
-from models import news_sources
-
-Articles = news_sources.Articles
+from app.models import Articles
 
 class ArticlesTest(unittest.TestCase):
     '''
@@ -25,6 +23,3 @@ class ArticlesTest(unittest.TestCase):
         self.assertEqual(self.new_article.urlToImage,'https://www.aljazeera.com/mritems/Images/2019/4/13/05d7b81751a14d8d9849c697f4b79416_18.jpg')
         self.assertEqual(self.new_article.publishedAt,'2019-04-13T10:13:00Z')
         
-
-if __name__ == '__main__':
-    unittest.main()
