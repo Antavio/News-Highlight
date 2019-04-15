@@ -9,11 +9,15 @@ The website has the home page, that has a list of all sources of news displayed 
 
 ### Project Setup instructions
 Use the following commands to use this project.
-- install python 3.6
 - git clone https://github.com/Antavio/News-Highlight.git
+- install python 3.6
 - cd News-Highlight
+- Navigate to the virtual environment
+- Edit the start.sh file with your api key from the news.org website
+- Run chmod a+x start.py
 - atom .  //For those using atom text editor.
 - code .  //For those using Visual Studio editor.
+- Run ./start.py
 
 ### Technologies used
 The different technologies that were used to develop this program include:
