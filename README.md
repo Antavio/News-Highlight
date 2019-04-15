@@ -33,6 +33,9 @@ The different technologies that were used to develop this program include:
 |User clicks Browse articles link  |A page with various articles is loaded. It includes an Image, a description of the article, Visit site button and a footer with author's name & date posted.  |
 |User clicks visit site button    |The user is redirected to the source website where they can read the full article   |
 
+### Link to live site
+Here is a link to the live site https://antavionewshighlights.herokuapp.com/
+
 ### Contact Me
 If you have any suggestions, additions or modifications on this project you can reach me via my email: njuguna13@gmail.com
 
